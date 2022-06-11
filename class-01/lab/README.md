@@ -20,25 +20,25 @@ At heroku, we're going to setup 2 deployments. One for your dev branch and one f
  
 1. Log into Heroku on the command line with the command `heroku login`.  
 1. Create a new Heroku staging environment. 
-  1. run the command `heroku create --remote staging -a yourname-server-deploy-dev`. 
-  1. at this point, you've created your staging environment and can push code if you have a deployable proof of life.  If you do not, that's ok; do NOT push and wait to deploy until code is written.
-  1. When ready, push the dev branch to your staging environment `git push staging dev:main`
-  1. Let's dissect that command.  
-     - `git push` we understand.  
-     - the `staging` remote was created in the previous command with the `--remote` flag, giving us a reference point. 
-     - To deploy code to Heroku from a non-main branch of your local repository (for example, dev), use the following syntax to push it to the remote’s main branch: `dev:main` 
-     - once the command is run, our code has now been deployed to the staging remote on heroku
+   1. run the command `heroku create --remote staging -a yourname-server-deploy-dev`. 
+   1. at this point, you've created your staging environment and can push code if you have a deployable proof of life.  If you do not, that's ok; do NOT push and wait to deploy until code is written.
+   1. When ready, push the dev branch to your staging environment `git push staging dev:main`
+   1. Let's dissect that command.  
+      - `git push` we understand.  
+      - the `staging` remote was created in the previous command with the `--remote` flag, giving us a reference point. 
+      - To deploy code to Heroku from a non-main branch of your local repository (for example, dev), use the following syntax to push it to the remote’s main branch: `dev:main` 
+      - once the command is run, our code has now been deployed to the staging remote on heroku
    1. Confirm Deployment
    1. Once Deployment is confirmed, the dev branch on GitHub can be merged with the confidence that the production branch will perform as expected.
 1. After PR is Merged on GitHub, `git pull origin main` like normal.
 1. Create a new Heroku production environment. 
-  1. run the command `heroku create --remote production -a yourname-server-deploy-prod`.
-  1. at this point, you've created your production environment and can push code if you have a deployable proof of life.  If you do not, that's ok; do NOT push and wait to deploy until code is written, vetted on the dev branch with tests and staging deployment, and merged to main.
-  1. When ready, push the main branch to your production environment: `git push production main`
-  1. Note the differences with the production push command compared to the staging deployment above.
-    - `git push` is the same
-    - `production`  points to our "production" remote
-    - the code exists in the main branch after merge, so we can push directly from `main`
+   1. run the command `heroku create --remote production -a yourname-server-deploy-prod`.
+   1. at this point, you've created your production environment and can push code if you have a deployable proof of life.  If you do not, that's ok; do NOT push and wait to deploy until code is written, vetted on the dev branch with tests and staging deployment, and merged to main.
+   1. When ready, push the main branch to your production environment: `git push production main`
+   1. Note the differences with the production push command compared to the staging deployment above.
+      - `git push` is the same
+      - `production`  points to our remote the, Heroku prod app
+      - the code exists in the main branch after merge, so we can push directly from `main`
 1. run the command `git remote -v` to see your remotes.  You'll see your origin, aka where your code lives on GitHub, and staging & production, aka where your code also lives at Heroku!
 
 ### The Code
