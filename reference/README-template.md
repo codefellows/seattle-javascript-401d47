@@ -4,7 +4,7 @@
 
 ### Author: Student/Group Name
 
-### Problem Domain:  
+### Problem Domain  
 
 Concise Description of why this app exists
 
