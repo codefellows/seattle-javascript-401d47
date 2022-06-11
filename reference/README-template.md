@@ -6,6 +6,8 @@
 
 > Problem Domain:  Concise Description of why this app exists
 
+#### Features / Routes
+
 ### Links and Resources
 
 - [ci/cd](http://xyz.com) (GitHub Actions)
@@ -32,8 +34,6 @@ i.e.
 - How do you run tests?
 - Any tests of note?
 - Describe any tests that you did not complete, skipped, etc
-
-#### Features / Routes
 
 #### UML
 
