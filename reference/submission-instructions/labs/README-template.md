@@ -4,9 +4,9 @@
 
 ### Author: Student/Group Name
 
-> Problem Domain:  Concise Description of why this app exists
+### Problem Domain:  
 
-#### Features / Routes
+Concise Description of why this app exists
 
 ### Links and Resources
 
@@ -28,6 +28,11 @@ i.e.
 - e.g. `npm start`
 
 #### How to use your library (where applicable)
+
+#### Features / Routes
+
+- Feature One: Details of feature
+- GET : `/hello` - specific route to hit
 
 #### Tests
 
