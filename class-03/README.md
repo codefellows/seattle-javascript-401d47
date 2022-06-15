@@ -91,6 +91,8 @@ app.use('/custom', customRoutes);
 
 ### Postgres
 
+Refer to [setup](https://codefellows.github.io/setup-guide/code-401-javascript/4-postgres.html) if necessary
+
 - Mac start postgres:  `brew services start postgres`
 - Windows/Linux, you may have set up aliases, or start with:  `pg_ctl -D /home/linuxbrew/.linuxbrew/var/postgres start`
 
