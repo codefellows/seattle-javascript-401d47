@@ -6,6 +6,10 @@ See warm up folder
 
 ## Code Review
 
+Code Challenge 02:
+
+see whiteboard for insights.  one possible approach, iterate from the back of the array moving the back elements one spot toward the end, one at a time.  when you get to the midpoint, assign the value
+
 Express Routing:
 
 - paths (http://localhost:3000/hello) / sending requests to different routes
@@ -43,3 +47,7 @@ app.put('/people/:id', handleUpdatePeople);
 app.get('/people/:id', handleDeletePeople);
 
 ```
+
+###  Whiteboard
+
+[class-03 whiteboard](https://projects.invisionapp.com/freehand/document/zksZrOoiu)
