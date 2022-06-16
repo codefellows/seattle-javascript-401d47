@@ -30,7 +30,7 @@ router.get('/customer/:id', async (req, res, next) => {
 // get one with relations
 router.get('/customerWithOrders/:id', async (req, res, next) => {
   let { id } = req.params;
-  let oneCustomer = await customerInterface.readOne(id, {include: orderInterface.model});
+  let oneCustomer = await customerInterface.readWithRelations(id, {include: orderInterface.model});
   res.status(200).send(oneCustomer);
 });
 
