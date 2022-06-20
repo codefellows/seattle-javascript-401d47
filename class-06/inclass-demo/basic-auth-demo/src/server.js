@@ -49,13 +49,13 @@ UsersModel.beforeCreate = (user) => {
 async function basicAuth(req, res, next)  {
   // confirm that the headers has an "authorization" property
   let { authorization } = req.headers;
-  console.log(authorization) //Basic dGVzdGVyOnBhc3MxMjM=
+  console.log(authorization) //something like: Basic sdfhsdbsdfblkm=
   if (!authorization){
     res.status(401).send('Not Authorized');
   } else {
     // get rid of 'Basic '
     let authStr = authorization.split(' ')[1];
-    console.log('authStr:', authStr); // dGVzdGVyOnBhc3MxMjM=
+    console.log('authStr:', authStr); //something like:  sdfhsdbsdfblkm=
 
     let decodedAuthStr = base64.decode(authStr);
     console.log('decodedAuthStr:', decodedAuthStr); //tester:pass123
