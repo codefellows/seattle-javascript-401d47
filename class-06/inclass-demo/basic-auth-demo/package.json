@@ -1,0 +1,34 @@
+{
+  "name": "basic-auth-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
+    "test": "NODE_ENV=test jest --verbose --coverage",
+    "test-watch": "NODE_ENV=test jest --watchAll --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkgallaway/basic-auth-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkgallaway/basic-auth-demo/issues"
+  },
+  "homepage": "https://github.com/rkgallaway/basic-auth-demo#readme",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "jest": "^28.1.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.0",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.0.8",
+    "supertest": "^6.2.3"
+  }
+}

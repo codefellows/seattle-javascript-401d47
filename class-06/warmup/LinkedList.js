@@ -2,24 +2,26 @@
 
 const { link } = require("fs");
 
+let callback = (node) => node.value * node.value;
+
 // creating a Node class -specific to Linked Lists
-class Node{
-  constructor(value){
+class Node {
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
-class LinkedList{
-  constructor(){
+class LinkedList {
+  constructor() {
     this.head = null;
   }
 
   // this is extra for demo -> will just console.log node values
-  traverse(){
+  traverse() {
     let current = this.head
     // pattern for traversing a  linked list.  ALWAYS
-    while(current){
+    while (current) {
       // do the thing (with each node)
       console.log(current.value);
       current = current.next;
@@ -30,10 +32,10 @@ class LinkedList{
 
   // not required, but we'll do this in class
   // add things to the END of the linked list
-  add(value){
+  add(value) {
     const node = new Node(value);
     // if there is no head, we create one!
-    if(!this.head){
+    if (!this.head) {
       this.head = node;
       // if we add the head, terminate operation or we'll add node twice
       return;
@@ -43,22 +45,43 @@ class LinkedList{
 
     // off by one errors are real.  when traversing is it current or current.next.  we have use cases for both
     // if there is a next node, we enter while loop
-    while(current.next){ 
+    while (current.next) {
       // we move the current pointer to the next node
-      current = current.next; 
+      current = current.next;
     }
     // we've found the end and we can assign the NEW NODE as the next node in the linked list 
-    current.next = node;  
+    current.next = node;
   }
 
   // prepend things to linked list - your assignment - google pre-pending to a linked list
-  insert(){
-    
-  }
-
-  toString(){
+  insert() {
 
   }
+
+  toString() {
+
+  }
+
+  //  - declare a function (let's use a method on the LinkedList Class) that takes in the linked list and callback
+  traverseWithCallback(callback) {
+    // what if linked list empty
+    let current = this.head;
+
+    while (current) {
+      // need to do something:
+      // maybe make sure existing value is typeof 'number'
+      current.value = callback(current);
+      current = current.next;
+    }
+    return this;
+  }
+  //- traverse LinkedList
+  //  - identify head
+  //  - use while loop to move thru list
+  //   - at each node, pass in the node and use callback
+  //   - reassign node value to the node
+  //   - move from current node to next node
+  // - when there is no next node - traversal is finished, return linked List
 }
 
 let linkedList = new LinkedList();
@@ -80,3 +103,5 @@ linkedList.add(3);
 
 // console.log(JSON.stringify(linkedList));
 linkedList.traverse();
+let newList = linkedList.traverseWithCallback(callback);
+newList.traverse();
