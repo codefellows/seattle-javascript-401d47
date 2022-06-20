@@ -8,7 +8,7 @@ Write a function that accepts as parameters:
 1. a linked list (where all the nodes contain a number value for this use case)
 1. a callback function to interact with each node.  
 
-The function should iterate through a linked list, and deliver each node to the callback function parameter for processing.  After iterating through the entire linked list, return the linked list.  Note:  depending on the callback, the linked list will likely in some way be changed. 
+The function should traverse through a linked list, and deliver each node to the callback function parameter for processing.  After traversing through the entire linked list, return the linked list.  Note:  depending on the callback, the linked list will likely in some way be changed. 
 
 ### Example Callback:
 ```javascript
