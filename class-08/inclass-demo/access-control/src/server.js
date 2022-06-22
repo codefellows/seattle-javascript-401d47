@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const { Users } = require('./models');
 const basicAuth = require('./middleware/basic');
 const bearerAuth = require('./middleware/bearer');
+const acl = require('./middleware/access-control');
 
 // instantiate express with Singleton
 const app = express();
@@ -21,14 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 
 //SAME example from class-06 demo
 app.post('/signup', async (req, res, next) => {
-  let { username, password } = req.body;
 
-  let encryptedPassword = await bcrypt.hash(password, 5);
+  req.body.password  = await bcrypt.hash(req.body.password, 5);
 
-  let user = await Users.create({
-    username,
-    password: encryptedPassword,
-  });
+  let user = await Users.create(req.body);
   res.status(200).send(user);
 });
 
@@ -41,7 +38,7 @@ app.get('/hello', basicAuth, (req, res, next) => {
 
 // SAME example from class-07
 app.get('/users', bearerAuth, async (req, res, next) => {
-  console.log(req.user);
+  console.log('users', req.user);
   let users = await Users.findAll({});
   let payload = {
     results: users,
@@ -49,6 +46,25 @@ app.get('/users', bearerAuth, async (req, res, next) => {
   };
   res.send(payload);
 });
+
+// Role Based Access Control Routes
+app.get('/read', bearerAuth, acl('read'), (req, res, next) => {
+  res.status(200).send('OK! I have read permissions');
+});
+
+app.get('/create', bearerAuth, acl('create'), (req, res, next) => {
+  res.status(200).send('OK! I have create permissions');
+});
+
+app.get('/update', bearerAuth, acl('update'), (req, res, next) => {
+  res.status(200).send('OK! I have update permissions');
+});
+
+app.get('/delete', bearerAuth, acl('delete'), (req, res, next) => {
+  res.status(200).send('OK! I have delete permissions');
+});
+
+
 
 module.exports = {
   server: app,

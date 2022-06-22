@@ -9,7 +9,7 @@ const {
   handleSignin,
   handleSignup,
   handleGetUsers,
-  handleSecret
+  handleSecret,
 } = require('./handlers.js');
 
 authRouter.post('/signup', handleSignup);

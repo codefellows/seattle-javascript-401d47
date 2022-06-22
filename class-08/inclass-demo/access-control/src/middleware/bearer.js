@@ -8,6 +8,7 @@ module.exports = async (req, res, next) => {
   } else {
     try {
       let token = req.headers.authorization.split(' ').pop();
+      console.log('bearer auth token ', token);
       let validUser = await Users.authenticateBearer(token);
       if (validUser){
         req.user = validUser;
