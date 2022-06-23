@@ -17,7 +17,7 @@ router.param('model', (req, res, next) => {
 
 router.get('/:model', handleGetAll);
 router.get('/:model/:id', handleGetOne);
-router.post('/:model', handleCreate);
+router.post('/:model', bearerAuth, acl('create'), handleCreate);
 router.put('/:model/:id', handleUpdate);
 router.delete('/:model/:id', handleDelete);
 
