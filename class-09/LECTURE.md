@@ -12,6 +12,7 @@ Properties of a Node
 - value => given on instantiation
 - next => null given on instantiation, reassigned to another node (possibly) in Linked List
 
+- see [algorithm and visual for Code Challenge 08](https://projects.invisionapp.com/freehand/document/WSuKsSmCS)
 - see [review folder](./inclass-demo/list-review/LinkedList.js) 
 
 ## Lab-09 Pairs
