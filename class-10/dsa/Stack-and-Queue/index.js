@@ -32,7 +32,7 @@ class Stack {
   }
 
   isEmpty(){
-    //  return (this.top === null) // true if null, false otherwise
+    return (this.top === null);
 
   }
 }
