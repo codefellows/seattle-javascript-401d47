@@ -1,0 +1,26 @@
+{
+  "name": "event_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chance": "^1.1.8",
+    "eslint": "^8.18.0",
+    "jest": "^28.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkgallaway/event_demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkgallaway/event_demo/issues"
+  },
+  "homepage": "https://github.com/rkgallaway/event_demo#readme"
+}
