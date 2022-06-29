@@ -1,0 +1,17 @@
+{
+  "name": "queue-clients",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.8",
+    "jest": "^28.1.2",
+    "socket.io-client": "^4.5.1"
+  }
+}
