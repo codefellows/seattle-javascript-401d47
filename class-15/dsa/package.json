@@ -1,0 +1,18 @@
+{
+  "name": "list-review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "LinkedList.js",
+  "dependencies": {
+    "eslint": "^8.18.0",
+    "jest": "^28.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
