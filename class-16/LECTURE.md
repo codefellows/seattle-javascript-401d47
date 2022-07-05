@@ -1,0 +1,35 @@
+#  AWS Intro
+
+## Presentations:  Final Event Lab
+
+> See class recording!  Great Job All!
+
+## Where We've Been
+
+1. RESTful HTTP web services with Express and Node
+1. Database management
+1. Authentication and Authorization with ACL
+1. Event Driven programs with the Observer Pattern
+
+## Cloud Computing
+
+10 years ago...  was totally a thing.  you work in an office and likely there were servers on-site.  
+
+### EC2 (Elastic Compute)
+
+Virtual Environment running on PHYSICAL Server Farm Hardware
+
+- Create a virtual machine by provisioning resources from physical servers. Very fast and efficient, sit in between the Operating System and the underlying hardware. Allows seamless scalability between software and hardware.
+- Environments can be accessible to other Amazon Services and the public.
+
+### Elastic Beanstalk (Application Platform)
+
+Web Application Platform on top of EC2 Virtual Environments
+
+- Create a platform specific runtime application that can execute your source code.
+- Configures an EC2 instance, pre-configured with the scale and maintain tools for your application type.
+
+
+### Whiteboard
+
+[Invision Freehand](https://projects.invisionapp.com/freehand/document/wxsrAulpK)
