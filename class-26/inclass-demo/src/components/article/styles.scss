@@ -1,0 +1,35 @@
+// to install sass:  npm i sass
+//create Variables with sass!
+$bg-color: lightgray;
+$text-color: purple;
+
+// I can create "mixins" aka functional logic
+@mixin theme(){
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+article {
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+  margin-top: 25px;
+
+  h3 {
+    color: green;
+  }
+
+  p {
+    @include theme;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2vw; 
+    padding: 2vw;
+  }
+}
+
+h3 {
+  color: darkblue;
+}
+
+
