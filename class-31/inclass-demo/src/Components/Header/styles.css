@@ -1,0 +1,9 @@
+* {
+  text-align: center;
+}
+
+.icon {
+  display: inline-block;
+  width: max-content;
+  margin: auto;
+}
