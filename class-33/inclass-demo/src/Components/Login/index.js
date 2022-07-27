@@ -21,16 +21,16 @@ const Login = () => {
 
           <label>
             <span>Username</span>
-            <input onChange={handleChange} required name="username" type="text" />
+            <input data-testid="username" onChange={handleChange} required name="username" type="text" />
           </label>
 
           <label>
             <span>Password</span>
-            <input onChange={handleChange} required name="password" type="text" />
+            <input data-testid="password" onChange={handleChange} required name="password" type="text" />
           </label>
 
           <label>
-            <button type="submit">Log In</button>
+            <button data-testid="login" type="submit">Log In</button>
           </label>
         </form>
       </When>
