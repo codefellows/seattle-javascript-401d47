@@ -14,3 +14,13 @@
 - A-cyclical:  does NOT loop via edges
 - Cyclical:  DOES loop via edges - aka can hit same vertex more than once  while traversing
 - Neighbors:  node / vertex connected by an edge (think next in linkedList, or right or left in BinaryTree)
+
+
+## CCW #5 takeaways
+
+- Abdi: be ready for anything
+- Katharine: Clean up your GitHub
+- Elizabeth: bre prepared for limited -> extensive prep info
+- Marcus: document your README's
+- Dylan: be flexible.  have tool experience
+- Brady - full time job example
