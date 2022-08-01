@@ -1,22 +1,35 @@
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Box, Button, Card, CardActions, CardContent, IconButton, Typography } from '@mui/material';
 import { connect } from 'react-redux';
-import { incrementCount } from '../../store/votes';
+import { incrementCount, decrementCount, reset } from '../../store/votes';
 
 const Candidates = (props) => {
 
-  const { totalVotes, candidates, incrementCount } = props;
+  const { totalVotes, candidates, incrementCount, decrementCount, reset } = props;
   console.log('totalVotes:', totalVotes);
   console.log('candidates:', candidates);
 
   return (
     <>
-    <h1>Total Candidate Votes: {totalVotes}</h1>
-    {candidates.map((candidate, idx) => (
-      <div key={`candidate-${idx}`}>
-        <p>Name: {candidate.name}</p>
-        <p>Votes: {candidate.votes}</p>
-        <button onClick={() => incrementCount(candidate)}>Vote {candidate.name}</button>
-      </div>
-    ))}
+      <h1>Total Candidate Votes: {totalVotes}</h1>
+
+      <Box sx={{ display: 'flex', flexDirection: 'row', textAlign: 'center', margin: '25px' }}>
+        {candidates.map((candidate, idx) => (
+          <Card sx={{ margin: '10px' }} raised key={`candidate-${idx}`}>
+            <CardContent>
+              <Typography variant="h5">Name: {candidate.name}</Typography>
+              <Typography variant="hp" color="text.secondary">Votes: {candidate.votes}</Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="contained" color="success" onClick={() => incrementCount(candidate)}>Vote {candidate.name}</Button>
+              <Button variant="contained" color="secondary" onClick={() => decrementCount(candidate)}>Un-Vote {candidate.name}</Button>
+              <IconButton color="error" onClick={reset}>
+                <DeleteIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
+        ))}
+      </Box>
     </>
   );
 }
@@ -27,12 +40,14 @@ const mapStateToProps = ({ votes }) => {
     totalVotes: votes.totalVotes,
     candidates: votes.candidates,
   }
-  
+
 }
 
 // adds redux actionFunctions to props
 const mapDispatchToProps = {
-  incrementCount
+  incrementCount,
+  decrementCount,
+  reset
 }
 
 // curry Candidates to the "higher order function"

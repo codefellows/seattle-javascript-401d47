@@ -8,12 +8,13 @@ const initialState = {
 };
 
 function votesReducer(state = initialState, action) {
-  switch(action.type){
+  let {type, payload } = action
+  switch(type){
     case 'INCREMENT':
       return {
         ...state,
         candidates: state.candidates.map(candidate => {
-          if(candidate.name === action.payload.name){
+          if(candidate.name === payload.name){
             return {
               name: candidate.name, 
               votes: candidate.votes + 1 
@@ -23,6 +24,20 @@ function votesReducer(state = initialState, action) {
         }),
         totalVotes: state.totalVotes + 1,
       }
+
+    case 'DECREMENT':
+      return {
+        ...state,
+        candidates: state.candidates.map(candidate => 
+          candidate.name === payload.name ? 
+          {name: candidate.name, votes: candidate.votes - 1} : 
+          candidate),
+        totalVotes: state.totalVotes - 1,
+      }
+
+    case 'RESET':
+      return initialState;
+
     default:
       return state
   }
