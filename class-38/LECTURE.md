@@ -24,4 +24,3 @@ use the api-server:
 `https://api-js401.herokuapp.com/api/v1/`
 
 - the above API has `/categories` and `/products` endpoints
-
