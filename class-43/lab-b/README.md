@@ -19,6 +19,8 @@ Assume, for this assignment, that your employer has asked your team to do a proo
 
 ### Framework Links
 
+- [Gatsby.js](https://www.gatsbyjs.com/docs/)
+- [Next.js](https://nextjs.org/)
 - [Vue](https://vuejs.org/)
 - [Angular](https://angular.io/)
 - [Svelte](https://svelte.dev/)
